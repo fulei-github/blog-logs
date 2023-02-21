@@ -1,9 +1,13 @@
+<!--
+ * @Descripttion:
+ * @version: 1.0.0
+ * @Author: fulei🐰
+ * @Date: 2023-02-21 11:36:50
+ * @LastEditors: fulei🐰
+ * @LastEditTime: 2023-02-21 11:44:23
+-->
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
     <router-view/>
   </div>
 </template>
