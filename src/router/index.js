@@ -4,30 +4,20 @@
  * @Author: fulei🐰
  * @Date: 2023-02-21 11:36:50
  * @LastEditors: fulei🐰
- * @LastEditTime: 2023-02-21 11:41:52
+ * @LastEditTime: 2023-02-21 13:46:55
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import routesPC from './pc'
+import routesH5 from './mobile'
 Vue.use(VueRouter)
-
-const routesP = [{
-  path: '/',
-  name: 'Index',
-  component: () => import(/* webpackChunkName: "about" */ '../views/pc/index.vue')
-}]
-
-const routesM = [{
-  path: '/',
-  name: 'Index',
-  component: () => import(/* webpackChunkName: "about" */ '../views/mobile/index.vue')
-}]
 
 let routes = []
 if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
-  routes = routesM
+  routes = routesH5
 } else {
-  routes = routesP
+  routes = routesPC
 }
 
 const router = new VueRouter({
